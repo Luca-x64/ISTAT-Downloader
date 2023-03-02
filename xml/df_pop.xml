@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Structure xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message">
+  <Header>
+    <ID>IT1001</ID>
+    <Test>true</Test>
+    <Prepared>2001-03-11T15:30:47+01:00</Prepared>
+    <Sender id="ISTAT">
+      <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Italian Statistical Institute</Name>
+      <Contact>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Francesco Rizzo</Name>
+        <Department xml:lang="en">Statistics</Department>
+        <Role xml:lang="en">Francesco Rizzo</Role>
+        <Email>rizzo@istat.it</Email>
+        <Fax>210 00010999</Fax>
+        <Telephone>210 2222222</Telephone>
+        <URI>http://www.sdmx.org</URI>
+      </Contact>
+    </Sender>
+    <Receiver id="ESTAT">
+      <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Eurostat</Name>
+      <Contact>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Bengt-Ake Lindblad</Name>
+        <Department xml:lang="en">Information Technology</Department>
+        <Role xml:lang="en">Bengt-Ake Lindblad</Role>
+        <Email>bengt-ake.lindblad@ec.europa.eu</Email>
+        <Fax>210 3810999</Fax>
+        <Telephone>210 1234567</Telephone>
+        <URI>http://www.sdmx.org</URI>
+        <X400>lalala</X400>
+      </Contact>
+    </Receiver>
+    <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Trans46302</Name>
+    <Source xml:lang="en">source</Source>
+  </Header>
+  <Structures>
+    <Dataflows xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure">
+      <Dataflow id="INDIC_LAV" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:INDIC_LAV(1.0)" agencyID="ESTAT" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Indicatori relativi al lavoro</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Current activity status rate</Name>
+        <Structure>
+          <Ref id="DICA_INDIC_LAV" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPINCV" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=ESTAT:POPINCV(1.0)" agencyID="ESTAT" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione in convivenza</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Population in institutional household</Name>
+        <Structure>
+          <Ref id="DICA_POPINCV" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="ABIT_PR" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:ABIT_PR(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Abitazione occupate da persone residenti</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Conventional dwellings occupied by resident persons</Name>
+        <Structure>
+          <Ref id="DICA_ABIT_PR" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="ABIT_PR_COM" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:ABIT_PR_COM(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Abitazioni occupate da persone residenti - Dati comunali</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Conventional dwellings occupied by resident persons - Municipal data</Name>
+        <Structure>
+          <Ref id="DICA_ABIT_PR_COM" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="ALLOGGI" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:ALLOGGI(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Alloggi</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Housing units</Name>
+        <Structure>
+          <Ref id="DICA_ALLOGGI" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CARATT_ATTL" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CARATT_ATTL(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Caratteristiche dell'attività lavorativa</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Characteristics of occupation</Name>
+        <Structure>
+          <Ref id="DICA_CARATT_ATTL" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CARATT_ATTL_COM" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CARATT_ATTL_COM(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Occupati per sezioni di attività economica - Dati comunali</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Employed persons by industry (branch of economic activity) - Municipal data</Name>
+        <Structure>
+          <Ref id="DICA_CARATT_ATTL_COM" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CARATT_ATTL_TS" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CARATT_ATTL_TS(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Occupati e in cerca di prima occupazione per titolo di studi</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Employed persons and unemployed persons never worked before by certificate or degree obtained</Name>
+        <Structure>
+          <Ref id="DICA_CARATT_ATTL_TS" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CONDPROF" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CONDPROF(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Condizione professionale o non professionale della popolazione residente</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Current activity status of resident population</Name>
+        <Structure>
+          <Ref id="DICA_CONDPROF" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CONDPROF_COP" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CONDPROF_COP(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Condizione professionale o non professionale dei componenti della coppia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Current activity status of partners in a couple</Name>
+        <Structure>
+          <Ref id="DICA_CONDPROF_COP" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CONDPROF_NUC" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CONDPROF_NUC(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Condizione professionale o non professionale dei nuclei familiari costituiti da un solo genitore</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Current activity status of lone parents</Name>
+        <Structure>
+          <Ref id="DICA_CONDPROF_NUC" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="CONV" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:CONV(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Convivenze</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Institutional households</Name>
+        <Structure>
+          <Ref id="DICA_CONV" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="EDIFICI1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:EDIFICI1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Edifici</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Buildings</Name>
+        <Structure>
+          <Ref id="DICA_EDIFICI1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="EDIFICI1_COM" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:EDIFICI1_COM(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Edifici per stato d'uso</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Utilized buildings</Name>
+        <Structure>
+          <Ref id="DICA_EDIFICI1_COM" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="EDIFICIRES" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:EDIFICIRES(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Edifici residenziali</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Residential buildings</Name>
+        <Structure>
+          <Ref id="DICA_EDIFICIRES" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAMST_CARATT" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAMST_CARATT(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie con almeno uno straniero residente</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households with at least one foreign member</Name>
+        <Structure>
+          <Ref id="DICA_FAMST_CARATT" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAMST_CARATT1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAMST_CARATT1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie con almeno uno straniero residente per tipologia della famiglia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households with at least one foreign member by type of private household</Name>
+        <Structure>
+          <Ref id="DICA_FAMST_CARATT1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_ABITBS" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_ABITBS(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie per caratteristiche dell'abitazione e beni e servizi posseduti</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households by conventional dwelling characteristics and goods and services</Name>
+        <Structure>
+          <Ref id="DICA_FAM_ABITBS" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_ABITED" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_ABITED(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie in abitazione per caratteristiche dell'abitazione e dell'edificio</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households by conventional dwelling and building characteristics</Name>
+        <Structure>
+          <Ref id="DICA_FAM_ABITED" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_CARATT" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_CARATT(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households</Name>
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Caratteristiche delle famiglie</Name>
+        <Structure>
+          <Ref id="DICA_FAM_CARATT" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_CARATT4" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_CARATT4(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie per tipologia di famiglia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households by type of private household</Name>
+        <Structure>
+          <Ref id="DICA_FAM_CARATT4" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_CARATT_1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_CARATT_1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie per titolo di godimento</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private households by tenure status of the household</Name>
+        <Structure>
+          <Ref id="DICA_FAM_CARATT1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_COPPIE1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FAM_COPPIE1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Coppie</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Couple families</Name>
+        <Structure>
+          <Ref id="DICA_COPPIE1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FORMAZIONE1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:FORMAZIONE1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente che ha concluso o frequenta corsi di formazione professionale</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population who has attained or attend vocational training courses</Name>
+        <Structure>
+          <Ref id="DICA_FORMAZIONE1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="GRADOISTR" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:GRADOISTR(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Grado di istruzione della popolazione residente di 6 anni e più</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Educational attainement of resident population aged 6 years and over</Name>
+        <Structure>
+          <Ref id="DICA_GRADOISTR" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="GRADOISTR1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:GRADOISTR1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Grado di istruzione dettagliato della popolazione residente di 6 anni e più</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Detailed educational attainement of resident population aged 6 years and over</Name>
+        <Structure>
+          <Ref id="DICA_GRADOISTR1" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="INDIC_EDU" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:INDIC_EDU(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Indicatori relativi all'istruzione</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Educational attainement status rate</Name>
+        <Structure>
+          <Ref id="DICA_INDIC_EDU" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="ISCRFREQ" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:ISCRFREQ(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente che frequenta o è iscritta ad un corso regolare di studi</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population who attend or enrolled at the school</Name>
+        <Structure>
+          <Ref id="DICA_ISCRFREQ" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="LCAB_AE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:LCAB_AE(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Abitazioni ed edifici per tipo di località abitata</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Conventional dwellings and buildings by type of locality</Name>
+        <Structure>
+          <Ref id="DICA_LCAB_AE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="LCAB_PF" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:LCAB_PF(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente e famiglie per tipo di località abitata</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population and private households by type of locality</Name>
+        <Structure>
+          <Ref id="DICA_LCAB_PF" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="NUCLEI" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:NUCLEI(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Nuclei familiari</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Family nuclei</Name>
+        <Structure>
+          <Ref id="DICA_NUCLEI" version="1.2" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="PEND" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:PEND(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Spostamenti per studio o lavoro</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Commuting for studying or working</Name>
+        <Structure>
+          <Ref id="DICA_PEND" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPINALL" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPINALL(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente in famiglia che vive in alloggio</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population in private household living in a housing unit</Name>
+        <Structure>
+          <Ref id="DICA_POPINALL" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPINFM" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPINFM(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente in famiglia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population in private huosehold</Name>
+        <Structure>
+          <Ref id="DICA_POPINFM" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPINFM1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPINFM1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente in famiglia per tipologia della famiglia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population in private household by type of private household</Name>
+        <Structure>
+          <Ref id="DICA_POPINFM1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_ABRUZZO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_ABRUZZO(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Abruzzo</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Abruzzo</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_BASILICATA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_BASILICATA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Basilicata</Name>
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Basilicata</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_CALABRIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_CALABRIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Residente population - Final data - Calabria</Name>
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Calabria</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_CAMPANIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_CAMPANIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Campania</Name>
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Campania</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_EMILIAROMAGNA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_EMILIAROMAGNA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Emilia Romagna</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Emilia Romagna</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_FRIULI" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_FRIULI(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Friuli Venezia Giulia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Friuli Venezia Giulia</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_LAZIO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_LAZIO(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Lazio</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Lazio</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_LIGURIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_LIGURIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Liguria</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Liguria</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_LOMBARDIAbis" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_LOMBARDIAbis(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Lombardia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Lombardia</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_MARCHE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_MARCHE(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Marche</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Marche</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_MOLISE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_MOLISE(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Molise</Name>
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Molise</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_PIEMONTEbis" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_PIEMONTEbis(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Piemonte</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Piemonte</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_PUGLIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_PUGLIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Puglia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Puglia</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_RIPARTIZIONIbis" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_RIPARTIZIONIbis(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione Residente - Dati Definitivi - Ripartizioni</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident Population - Final Data - Ripartizioni</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_SARDEGNA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_SARDEGNA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Sardegna</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Sardegna</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_SICILIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_SICILIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Sicilia</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Residente population - Final data - Sicilia</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_TOSCANA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_TOSCANA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Toscana</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Toscana</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_TRENTINO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_TRENTINO(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Trentino</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Trentino</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_UMBRIA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_UMBRIA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Umbria</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Umbria</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_VALLEDAOSTA" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_VALLEDAOSTA(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Valle d'Aosta</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Valle d'Aosta</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POPLEGALE_VENETO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POPLEGALE_VENETO(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente - Dati definitivi - Veneto</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population - Final data - Veneto</Name>
+        <Structure>
+          <Ref id="DICA_POPLEGALE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POP_RESPRE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POP_RESPRE(1.1)" agencyID="IT1" version="1.1" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente e popolazione presente</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population and  present population</Name>
+        <Structure>
+          <Ref id="DICA_POP_RESPRE" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POP_RSPR_CITT1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POP_RSPR_CITT1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente per cittadinanza - comuni</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population by citizenship - municipalities</Name>
+        <Structure>
+          <Ref id="DICA_POP_RSPR_CITT1" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POP_RSPR_CITT2" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POP_RSPR_CITT2(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente  per citttadinanza</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population by citizenship</Name>
+        <Structure>
+          <Ref id="DICA_POP_RSPR_CITT2" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="POP_RS_DMP1" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:POP_RS_DMP1(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente: luogo di nascita e dimora precedente</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population: place of birth and previous place of usual residence</Name>
+        <Structure>
+          <Ref id="DICA_POP_RS_DMP1" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="STANZE" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:STANZE(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Stanze in abitazioni occupate da persone residenti</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Rooms in conventional dwellings occupied by resident persons</Name>
+        <Structure>
+          <Ref id="DICA_STANZE" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="TITPOST" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:TITPOST(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Popolazione residente che ha conseguito titoli di studio post-laurea o post-diploma AFAM</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Resident population with  post-university specialization or post-diploma AFAM</Name>
+        <Structure>
+          <Ref id="DICA_TITPOST" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="TITSTUDIO" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=IT1:TITSTUDIO(1.0)" agencyID="IT1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Titolo di studio della popolazione residente di 6 anni e più</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Certificate or degree obtained by resident population 6 years and over</Name>
+        <Structure>
+          <Ref id="DICA_TITSTUDIO" version="1.1" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+      <Dataflow id="FAM_CARATT5" urn="urn:sdmx:org.sdmx.infomodel.datastructure.Dataflow=it1:FAM_CARATT5(1.0)" agencyID="it1" version="1.0" isFinal="true">
+        <Name xml:lang="it" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Famiglie per caratteristiche della persona di riferimento</Name>
+        <Name xml:lang="en" xmlns="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common">Private household by characteristic of reference person</Name>
+        <Structure>
+          <Ref id="DICA_FAM_CARATT5" version="1.0" agencyID="IT1" package="datastructure" class="DataStructure" xmlns="" />
+        </Structure>
+      </Dataflow>
+    </Dataflows>
+  </Structures>
+</Structure>
