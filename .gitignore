@@ -1,9 +1,6 @@
 /__pycache__
-
-*.json
-
 /Gkey/*.json
 /out/*.xml
 /out/*.csv
 /out/*.txt
-config.py
+
