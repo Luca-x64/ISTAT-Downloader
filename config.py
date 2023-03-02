@@ -36,7 +36,7 @@ namespace = {
 
 
 
-# Link che potrebbero essere utili
+# helpful links
 #   https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx
 #   https://developers.italia.it/it/api/istat-sdmx-rest.html
 #   https://github.com/ondata/guida-api-istat
