@@ -23,7 +23,8 @@ dataset = "istat"
 #Data Namespace dont touch
 namespace = {
        'generic': "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic",
-       'structure': "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure"
+       'structure': "http://www.sdmx.org/resources/sdmxml/schemas/v2_1/structure",
+       'common': 'http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common'
    }
 
 
