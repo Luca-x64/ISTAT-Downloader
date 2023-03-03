@@ -1,4 +1,4 @@
-# istat
+# ISTAT
 
 This script allows the user to easily interrogate Istat API (https://www.istat.it/en/), you can choose the
 Data category (Dataflow - DF) and the filters for that particular dataflow chosen, subsequently it is possible to load the data obtained by the API on Google Cloud Storage and then transfer them to a table on Google Big Query
