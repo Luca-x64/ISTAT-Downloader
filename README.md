@@ -34,3 +34,6 @@ Not available
 
 `.chooselink()`               Choose endpoint link
 
+
+while choosing filters you can choose multiple value by separate them with a "+" ex. Y30+Y31+Y32 ...
+Choose everything (wildcard) by insert nothing (press enter)
