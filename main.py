@@ -33,16 +33,17 @@ class Istat():
     Gtime_filename = 'data'
 
     def __init__(self):
-        self.G_login()  # Google service Auth
-        self.choose_dataflow() #TODO Spostare?
+        pass
+        
 
-
-    def choose_dataflow(self):  #Choose Dataflow => set resourceID, agencyId, version
+    def choose_dataflow(self):  #Choose Dataflow => set resourceID, agencyId, version, refID
         file_df = "xml/df_old.xml"
-        file_choose_df = "out/choose_datafow.txt"
+        file_choose_df = "out/choose_dataflow.txt"
         
         if not exists(file_df):
             self.request(DF_OLD, file_df)
+            if not self.query_response:
+                exit(2)
         
         xml_parse = ET.parse(file_df)
         dataflows = xml_parse.xpath("//structure:Dataflow",namespaces=namespace)
@@ -66,25 +67,24 @@ class Istat():
         self.agencyID=df_selected.get("agencyID")
         self.refID=df_selected.find("structure:Structure",namespace).find("Ref").get("id")
     
+    
     def get_data(self):  # get data from istat api
-        
-        self.chosen_link = ALL_LINK[1]  # || self.chooselink() //TODO
+        if self.query_response:
+            self.chosen_link = ALL_LINK[1]  # || self.chooselink() 
 
-        self.prepare_filters()
+            self.prepare_filters()      #prepare the filter in the right format of the current dataflow
+            print("\n\nrequesting data...")
+            self.request(self.chosen_link[-1].format(self.agencyID,             #API request
+                         self.resourceID, self.chosen_filter), outputdata)
 
-        print("\n\nrequesting data...")
-        self.request(self.chosen_link[-1].format(self.agencyID,
-                     self.resourceID, self.chosen_filter), outputdata)
+            self.xml_to_csv()               #convert xml file to csv
 
-        self.xml_to_csv()
-        self.loadGstorage()
-        self.loadGBQ()
 
 
 
     def prepare_filters(self):  # Prepare the filters
         file_available = f"xml/available_keys_{self.resourceID}.xml"
-        file_ds = "xml/ds_new.xml"
+        file_ds = f"xml/ds_{self.resourceID}.xml"
         file_choose_filter = "out/choose_filter.txt"    
         
         link = self.chosen_link
@@ -101,7 +101,6 @@ class Istat():
                 self.choose_dataflow()
                 self.prepare_filters()
                 
-        #TODO datastructure dimensionlist[0]/ refID
         ds_link = link[3].format(self.refID)
         if not exists(file_ds):
             print(f"gathering dataflow of {self.resourceID}...")            
@@ -116,36 +115,28 @@ class Istat():
 
         xml_parse = ET.parse(file_available)  # parse xml file
         codelists = xml_parse.xpath("//structure:Codelist",namespaces=namespace)
-        #for c in codelists:
-        #    print(c.get("id"))
-       
-       
+        codelists_ID = xml_parse.xpath("//structure:Codelist/@id",namespaces=namespace)
         
-        #NEW_KEY_ORDER è una lista di parole
         new_order = []
+        #sort the codelists in the right order
         for i in range(len(codelists)):
-           new_order.append(codelists[new_key_order[i]])
-        print(new_key_order)
-        ##END
-        #
-        #new_order = codelists
-        
-        
-        #for codelist in new_order:  # Scan the file for the filter options
-        #for codelist in codelists:  # Scan the file for the filter options
-        for codelist in new_key_order #TODO:  # Scan the file for the filter options      #TODO deve essere una list di dataflow(?) (btw Element xml)
+           new_order.append(codelists[codelists_ID.index(new_key_order[i])] )  
+
+
+        for codelist in new_order: 
             sub_filter = {}
-            for code in codelist:
-                if "Name" not in code.tag:
-                    sub_filter[code.get("id")] = code[not lang].text
+            for code in codelist.findall("structure:Code",namespaces=namespace):
+                sub_filter[code.get("id")] = code[not lang].text
             self.all_filters[codelist.get("id")] = sub_filter
             
-            description = codelist[not lang].text
-
+            description = codelist.findall("common:Name",namespaces=namespace)[not lang].text
+            
+            #Create list of the user keys filters
+            
             if len(sub_filter) == 1:
                 sub_choose = next(iter(sub_filter))
-                print("choose {}: chosen '{}' because it was the only choice".format(
-                    description, str(sub_filter.get(sub_choose)).capitalize()))
+                print("choose {}: chosen: '{} [{}]' because it was the only choice".format(
+                    description, str(sub_filter.get(sub_choose)).capitalize(),"TODO"))
 
             else:
                 with open(file_choose_filter, "w") as choose_file:
@@ -181,44 +172,52 @@ class Istat():
         if exists(file_choose_filter):
             remove(file_choose_filter)
 
-        # formatting the filter for the API
+        # formatting the filters for the API
         result_filter = ("{}."*len(codelists))[:-1].format(*user_filters)
         self.chosen_filter = result_filter
       
-    
-    def get_new_key_position(self): #test
-        excel_path="xlsm/new_dimension.xlsm"
-        
-        df = pd.read_excel(excel_path,sheet_name="Transcodifica Dimensioni",index_col=20,)
+    #scan the excel file for getting the new order of the dimensions (keys filters)
+    def get_new_key_position(self): #TODO may in future will be helpful
+        if False:
+            excel_path="xlsm/new_dimension.xlsm"
 
-        df = df[df["DF"]==self.resourceID] #get dataframe of the current resourceID (dataflowID)
-        res = df.reset_index()
+            df = pd.read_excel(excel_path,sheet_name="Transcodifica Dimensioni",index_col=20,)
 
-        new_position=[]
-        for index,row in res.iterrows():
-            new_position.append(row["POS_NEW"])
-        return new_position 
-        
+            df = df[df["DF"]==self.resourceID] #get dataframe of the current resourceID (dataflowID)
+            res = df.reset_index()
 
-    def request(self, url, filename):
-        print(url)
+            new_position=[]
+            for index,row in res.iterrows():
+                new_position.append(row["POS_NEW"])
+            return new_position 
+        else:
+            print("Not yet implemented!")
+
+
+    def request(self, url, filename):       #Make an API request
         response = http_adapter.get_legacy_session().get(
             url, headers={'content-type': 'application/json'})
 
-        content = response.content.decode("utf-8")
-
+        try:
+            content = response.content.decode("utf-8")
+        except Exception:
+            content = response.content        
+            pass
+            
+            
         if "200" in str(response):
             self.export_file(filename, content)
             self.query_response=True
         else:
-            print("status:", response)
-            print(response.content) #DEBUG
+            print("status:", response,url)
+            print(response.content) 
             self.query_response = False
 
-    def xml_to_csv(self):  # Convert the API response file xml to csv
-        if (self.query_response):
 
-            cols = ["CITY", "SEX", "AGE", "CIVIL_STATUS", "YEAS", "VALUE"]
+    def xml_to_csv(self):  # Convert the API response file xml to csv
+        if self.query_response:
+
+            cols = ["CITY", "SEX", "AGE", "CIVIL_STATUS", "YEAR", "VALUE"]
             rows = []
 
             data_parse = Xet.parse(outputdata)
@@ -253,7 +252,10 @@ class Istat():
         else:
             exit()
 
-    def loadGstorage(self):
+
+    def loadGstorage(self):     #Load the file csv on Google cloud Storage
+        if self.storage_client == None or self.storage_client == None:
+            self.G_login()
         self.Gtime_filename +=f"_{self.resourceID}" + date.today().strftime("_%m-%d-%y") + \
             datetime.now().strftime("_%H-%M-%S")
         # filename on Gcloud
@@ -283,10 +285,13 @@ class Istat():
         )
 
 
-    def loadGBQ(self):
+    def loadGBQ(self):  #move file from Google Cloud storage to a table on Google Big Query
+        if self.storage_client == None or self.storage_client == None:
+            self.G_login()
+            
         table_name = self.Gtime_filename
 
-        # self.bq_client.create_dataset(dataset)   # create a dataset on G bq
+        # self.bq_client.create_dataset(dataset)   # create a dataset on G BigQuery
 
         # Print all datasets available
 
@@ -307,6 +312,7 @@ class Istat():
         job_config = bigquery.LoadJobConfig(
             schema=[
                 bigquery.SchemaField("ID", "INTEGER"),
+                #TODO responsive
                 bigquery.SchemaField("CITTA", "STRING"),
                 bigquery.SchemaField("SESSO", "STRING"),
                 bigquery.SchemaField("ETA", "STRING"),
@@ -328,7 +334,7 @@ class Istat():
 
         # Make an API request.
         destination_table = self.bq_client.get_table(table_id)
-        print("File trasfered on G BigQuery - Loaded {} rows.".format(destination_table.num_rows))
+        print("File transfered on G BigQuery - Loaded {} rows.".format(destination_table.num_rows))
 
 
     def G_login(self):  # Auth with service in Google Cloud Storage and in Google BigQuery
@@ -345,7 +351,6 @@ class Istat():
 
 
     def chooselink(self):  # Not available
-        print("not available")
         if False:
             links = [OLD[0], NEW[0], POP[0]]
             # links [:-1] because URL_POP is not complete (missing docs)
@@ -360,6 +365,8 @@ class Istat():
                 selected_links = ALL_LINK[1]
 
             print(selected_links)
+        else:
+            print("not available")
 
 
     def export_file(self, path, content):  # export api response content in xml file
@@ -367,7 +374,8 @@ class Istat():
         with open(path, "w") as file:
             file.write(content)
 
-        x = ET.parse(path)  # formatting the xml file
+        # formatting the xml file
+        x = ET.parse(path)  
         pretty_xml = ET.tostring(x, pretty_print=True, encoding=str)
         with open(path, "w") as file:
             file.write(pretty_xml)
@@ -376,11 +384,12 @@ class Istat():
 
     
 
-
-istat = Istat()
-
-#istat.choose_dataflow()
-# istat.create_bucket("istat_population") #No permission
-
-istat.get_data()
-# istat.get_data()
+if __name__ == "__main__":
+    
+    istat = Istat()
+    istat.choose_dataflow()
+    istat.get_data()
+    istat.loadGstorage()
+    istat.loadGBQ
+    
+    # istat.create_bucket("istat_population") #No permission

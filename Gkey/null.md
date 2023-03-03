@@ -1,1 +1,3 @@
-Insert in this folder your key
+Insert in this folder your key .json
+
+<!-- Leave here this file -->

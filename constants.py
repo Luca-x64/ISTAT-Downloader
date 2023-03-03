@@ -22,12 +22,12 @@ DF_NEW = URL_NEW+"dataflow/"
 
 # AvailbleConstraint (AC) get all of the keys value option available and their description
 AC_OLD = URL_OLD + \
-    "availableconstraint/{},{},{}/...../all?mode=available&references=codelist"
+    "availableconstraint/{},{},{}//all?mode=available&references=codelist"
     
 AC_NEW = URL_NEW + \
-    "availableconstraint/{},{},{}/...../all?mode=available&references=codelist"  # non funziona
+    "availableconstraint/{},{},{}//all?mode=available&references=codelist"  # non funziona
 AC_POP = URL_POP + \
-    "availableconstraint/{},{},{}/...../all"  # non funziona
+    "availableconstraint/{},{},{}//all"  # non funziona
 
 # DataFlow (DF) resource UNNECESSARY
 # DF_RESOURCE_NEW = DF_NEW+"IT1/22_289"       # get informaton about a resource (equivalent to DF_NEW)
@@ -36,8 +36,8 @@ AC_POP = URL_POP + \
 
 # DataStructure (DS)  base_url+ datastructure/{AgentID}/{(resource) Structure Ref ID}
 DS_NEW = URL_NEW+"datastructure/IT1/{}/"
-DS_OLD = URL_OLD+"datastructure/IT1/DCIS_POPRES1/"
-DS_POP = URL_POP+"datastructure/IT1/DICA_POPINALL/"
+DS_OLD = URL_OLD+"datastructure/IT1/{}/"
+DS_POP = URL_POP+"datastructure/IT1/{}/"
 
 # CodeList (CL) ? get all of the available code    #NOT USE
 CL_NEW = URL_NEW + "codelist/IT1/"
@@ -48,7 +48,7 @@ CL_POP = URL_POP + "codelist/IT1/"
 # DATA   base_url /data/{AgencyID},ResourceID/ KEY
 
 # Example DATA_NEW = URL_NEW + "data/IT1,22_289/A.001001.JAN.1.Y30.1/"
-DATA_NEW = URL_NEW + "data/{},{}/{}"
+DATA_NEW = URL_NEW + "data/{},{}/{}"            #{agencyID},{resourceID}/filters (key)
 DATA_OLD = URL_OLD + "data/"  
 # Example: DATA_OLD = "http://sdmx.istat.it/sdmxws/rest/data/IT1,22_289,1.5/A.001001.JAN.1.Y30.1?startPeriod=2020-01&endPeriod=2020-10&dimensionAtObservation=TIME_PERIOD&detail=full"
 DATA_POP = URL_POP + "data/" 
