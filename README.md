@@ -19,7 +19,7 @@ run the `main.py` file
 
 or
 
-- Importa la classe Istat : `from main import Istat`
+- import the Istat class: `from main import Istat`
 
 `.choose_dataflow()`          Choose the dataflow
 
