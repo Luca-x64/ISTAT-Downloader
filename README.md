@@ -22,11 +22,15 @@ or
 - Importa la classe Istat : `from main import Istat`
 
 `.choose_dataflow()`          Choose the dataflow
+
 `.get_data()`                 Get data from the ISTAT API
+
 `.loadGstorage()`             Load file csv on Google Cloud Storage
+
 `.loadGBQ()`                  Move the file on Gcs on a Google BigQuery table
 
 Not available
 `.get_new_key_position()`     Scan the excel file for getting the new order of the dimensions (keys filters)
+
 `.chooselink()`               Choose endpoint link
 
