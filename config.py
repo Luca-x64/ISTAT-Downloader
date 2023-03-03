@@ -1,7 +1,9 @@
 ##Program configuration
 
+#fill the {parametr} in brackets
+
 #Path of the Google Key (Service Account)
-key_path = "Gkey/kso-it-sandbox-66cf22ed4ea0.json"
+key_path = "Gkey/{filename}.json"
 
 # output data lang
 languages = {"en": 0, "it": 1}
@@ -17,7 +19,7 @@ GC_file="out/data.csv"              #file to load on Gcloud
 
 #Google Big Query
 
-project = "kso-it-sandbox"      #Google Big query project name
+project = "{project_name}"      #Google Big query project name
 dataset = "istat"         
 
 #Data Namespace dont touch
@@ -35,7 +37,7 @@ namespace = {
 
 
 
-# helpful links
+# Link che potrebbero essere utili
 #   https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx
 #   https://developers.italia.it/it/api/istat-sdmx-rest.html
 #   https://github.com/ondata/guida-api-istat
