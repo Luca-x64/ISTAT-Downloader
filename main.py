@@ -19,6 +19,7 @@ class Istat():
     agencyID = ""            #The IT1 domain, maintained by the ISTAT,
     resourceID = "" #22_289       #ID of the resource (see xml/df_ ì{version (old/new/pop)}.xml)
     version = "" 
+    refID=""
 
     query_response = True
     chosen_filter = ''  # Example: A.063039.JAN.9.Y45.99
@@ -63,7 +64,7 @@ class Istat():
         self.resourceID=df_choose_ID
         self.version=df_selected.get("version")
         self.agencyID=df_selected.get("agencyID")
-        
+        self.refID=df_selected.find("structure:Structure",namespace).find("Ref").get("id")
     
     def get_data(self):  # get data from istat api
         
@@ -83,6 +84,7 @@ class Istat():
 
     def prepare_filters(self):  # Prepare the filters
         file_available = f"xml/available_keys_{self.resourceID}.xml"
+        file_ds = "xml/ds_new.xml"
         file_choose_filter = "out/choose_filter.txt"    
         
         link = self.chosen_link
@@ -98,22 +100,46 @@ class Istat():
                 
                 self.choose_dataflow()
                 self.prepare_filters()
-                return
                 
+        #TODO datastructure dimensionlist[0]/ refID
+        ds_link = link[3].format(self.refID)
+        if not exists(file_ds):
+            print(f"gathering dataflow of {self.resourceID}...")            
+            self.request(ds_link, file_ds)
+        
+        
+        xml_parse = ET.parse(file_ds)  # parse xml file
+        new_key_order = xml_parse.xpath(
+            f"//structure:DataStructure[@id='{self.refID}']//structure:DimensionList/structure:Dimension//structure:Enumeration/Ref/@id",namespaces=namespace)
+        
         user_filters = []
 
         xml_parse = ET.parse(file_available)  # parse xml file
-
-        for filter in FILTERS:  # Scan the file for the filter options
-            string_filter = f"//*[@id='{filter}']"
-            codelist = xml_parse.xpath(string_filter)[0]
-
+        codelists = xml_parse.xpath("//structure:Codelist",namespaces=namespace)
+        #for c in codelists:
+        #    print(c.get("id"))
+       
+       
+        
+        #NEW_KEY_ORDER è una lista di parole
+        new_order = []
+        for i in range(len(codelists)):
+           new_order.append(codelists[new_key_order[i]])
+        print(new_key_order)
+        ##END
+        #
+        #new_order = codelists
+        
+        
+        #for codelist in new_order:  # Scan the file for the filter options
+        #for codelist in codelists:  # Scan the file for the filter options
+        for codelist in new_key_order #TODO:  # Scan the file for the filter options      #TODO deve essere una list di dataflow(?) (btw Element xml)
             sub_filter = {}
             for code in codelist:
                 if "Name" not in code.tag:
                     sub_filter[code.get("id")] = code[not lang].text
             self.all_filters[codelist.get("id")] = sub_filter
-
+            
             description = codelist[not lang].text
 
             if len(sub_filter) == 1:
@@ -156,10 +182,26 @@ class Istat():
             remove(file_choose_filter)
 
         # formatting the filter for the API
-        result_filter = "{}.{}.{}.{}.{}.{}".format(*user_filters)
+        result_filter = ("{}."*len(codelists))[:-1].format(*user_filters)
         self.chosen_filter = result_filter
+      
+    
+    def get_new_key_position(self): #test
+        excel_path="xlsm/new_dimension.xlsm"
+        
+        df = pd.read_excel(excel_path,sheet_name="Transcodifica Dimensioni",index_col=20,)
+
+        df = df[df["DF"]==self.resourceID] #get dataframe of the current resourceID (dataflowID)
+        res = df.reset_index()
+
+        new_position=[]
+        for index,row in res.iterrows():
+            new_position.append(row["POS_NEW"])
+        return new_position 
+        
 
     def request(self, url, filename):
+        print(url)
         response = http_adapter.get_legacy_session().get(
             url, headers={'content-type': 'application/json'})
 
@@ -170,6 +212,7 @@ class Istat():
             self.query_response=True
         else:
             print("status:", response)
+            print(response.content) #DEBUG
             self.query_response = False
 
     def xml_to_csv(self):  # Convert the API response file xml to csv
@@ -207,7 +250,8 @@ class Istat():
             df = pd.DataFrame(rows, columns=cols)
             df.to_csv('out/data.csv')
             print("out/data.xml converted in out/data.csv")
-
+        else:
+            exit()
 
     def loadGstorage(self):
         self.Gtime_filename +=f"_{self.resourceID}" + date.today().strftime("_%m-%d-%y") + \

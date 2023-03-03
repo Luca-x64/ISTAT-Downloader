@@ -1,9 +1,7 @@
 ##Program configuration
 
-#fill the {parametr} in brackets
-
 #Path of the Google Key (Service Account)
-key_path = "Gkey/{filename}.json"
+key_path = "Gkey/kso-it-sandbox-66cf22ed4ea0.json"
 
 # output data lang
 languages = {"en": 0, "it": 1}
@@ -19,7 +17,7 @@ GC_file="out/data.csv"              #file to load on Gcloud
 
 #Google Big Query
 
-project = "{project_name}"      #Google Big query project name
+project = "kso-it-sandbox"      #Google Big query project name
 dataset = "istat"         
 
 #Data Namespace dont touch

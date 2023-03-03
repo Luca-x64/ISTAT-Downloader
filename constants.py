@@ -35,7 +35,7 @@ AC_POP = URL_POP + \
 # DF_RESOURCE_POP = DF_POP+"IT1/POPINCV"      # not working!? / unnecessary
 
 # DataStructure (DS)  base_url+ datastructure/{AgentID}/{(resource) Structure Ref ID}
-DS_NEW = URL_NEW+"datastructure/IT1/DCIS_PREVDEM1/"
+DS_NEW = URL_NEW+"datastructure/IT1/{}/"
 DS_OLD = URL_OLD+"datastructure/IT1/DCIS_POPRES1/"
 DS_POP = URL_POP+"datastructure/IT1/DICA_POPINALL/"
 
