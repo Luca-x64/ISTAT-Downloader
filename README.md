@@ -9,7 +9,8 @@ During the execution of the script you can choose:
 
 # How to use
 - import the your .json Google private key 
-- look the file config.py and set the `key_path` of your key , set the `bucket_name` and the `project` and the `dataset`
+- look the file config.py and set the `key_path` of your key and the `project` name.
+   (it's also possibile edit the `bucket_name` and the and the `dataset` name)
 
 
 
@@ -42,8 +43,12 @@ Choose everything (wildcard) by insert nothing (press enter)
 
 # Useful links
 https://www.istat.it/it/metodi-e-strumenti/web-service-sdmx
+
 https://developers.italia.it/it/api/istat-sdmx-rest.html
+
 https://github.com/ondata/guida-api-istat
+
 https://github.com/Attol8/istatapi
+
 https://www.youtube.com/watch?v=0OfsXybrwe
 
