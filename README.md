@@ -10,7 +10,7 @@ During the execution of the script you can choose:
 # How to use
 - import the your .json Google private key 
 - look the file config.py and set the `key_path` of your key and the `project` name.
-   (it's also possibile edit the `bucket_name` and the and the `dataset` name)
+   (it's also possibile edit the `bucket_name` and the `dataset` name)
 
 
 
